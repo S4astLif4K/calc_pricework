@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>#define</title>
+    <link rel="shortcut icon" href="img/favicon.png">
+    <meta name="author" content="Toyakov Denis" />
+    <link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/uikit.min.css"/>
+	<link rel="stylesheet" href="css/components/accordion.min.css"/>
+    <link rel="stylesheet" href="css/components/slider.min.css"/>
+    <link rel="stylesheet" href="css/components/slidenav.min.css"/>
+    <link rel="stylesheet" href="css/components/slideshow.min.css"/>
+    <link rel="stylesheet" href="css/components/dotnav.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/uikit.min.js"></script>
+    <script src="js/components/accordion.min.js"></script>
+    <script src="js/components/slider.min.js"></script>
+    <script src="js/components/slideset.min.js"></script>
+    <script src="js/components/slideshow.min.js"></script>
+    <script src="js/components/lightbox.min.js"></script>
+    <script src="js/components/sticky.min.js"></script>
+	<script src="js/components/notify.min.js"></script>
+    <script src="js/components/parallax.min.js"></script>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <menu>
+        <ul>
+            <li class="line"><div class="item"><span class="red">#</span> <span class="blue">define</span></div></li>
+            <li class="line"><div class="item">Главная</div></li>
+            <li class="line"><div class="numb"><i class="uk-icon-caret-down"></i></div><div class="item">Навыки</div></li>
+            <li class="line"><div class="numb"><i class="uk-icon-caret-down"></i></div><div class="item">Партфолио</div></li>
+            <li class="line"><div class="numb"><i class="uk-icon-caret-down"></i></div><div class="item">Блог</div></li>
+            <li class="line"><div class="item">Партнёры</div></li>
+        </ul>
+    </menu>
+    <section>
+        <div class="container">
+            <div class="h1-item">Расчитайте стоимость разработки</div>
+            <div id="root"></div>
+        </div>
+    </section>
+    <script type="text/babel">
+      var Time = React.createClass({
+      	render: function() {
+      		return (
+				<option>{this.props.children}</option>
+      		);
+      	}
+      });
+      var Calc = React.createClass ({ /* Модель задачи*/
+        getInitialState: function() {
+      		return {
+      			times: [ /* Массив с задачами */
+      				{n:3,k:1},
+      				{n:5,k:1.2},
+      				{n:8,k:1.5},
+      				{n:12,k:1.8},
+      				{n:24,k:2},
+      			],
+      			qualitys: [ /* Массив с задачами */
+      				{n:'Стандартная',k:1,d:'Стандартное качество кода'},
+      				{n:'Средняя',k:1.2,d:'Минификация js,css,изображений и прагон через валидаторы'},
+      				{n:'Глубокая',k:1.5,d:'Все возможные методы для улучшения скороси сайта в плоть до настройки сервера'},
+      			],
+      			timeN:3,
+      			timeK:1,
+      			qualityK:1
+      		}
+      	},
+      	eachO: function (i) { /* Вид вывода списка задач из массива */
+			return (
+				<Time value={i.k}>
+					{i.n}
+				</Time>
+			);
+		},
+		timeClick: function() {
+			var mas = this.state.times;
+			var element = this.refs.times.value;
+			var k,n;
+			mas.map (
+				function (i){
+					if (element == i.n){
+						k = i.k;
+						n = i.n;
+                	}
+				}
+			)
+			this.setState ({timeK: k,timeN: n});
+		},
+		qualClick: function() {
+			var mas = this.state.qualitys;
+			var element = this.refs.qualitys.value;
+			var k,n,d;
+			mas.map (
+				function (i){
+					if (element == i.n){
+						k = i.k;
+						n = i.n;
+						d = i.d;
+                	}
+				}
+			)
+			this.setState ({qualityK: k});
+			this.refs.qN.innerText = n;
+			this.refs.qD.innerText = d;
+		},
+      	render: function() {
+      		var Hp = 2000;
+      		var p = this.props.t * Hp * this.state.timeK * this.state.qualityK;
+      		var time = this.props.t / this.state.timeN;
+      		time = time.toFixed(0);
+ 			return (
+ 				<li>
+		            <div>
+		                <div className="line_block"><span className="blue">Стоимость</span> <span ref="price">{p}</span> <span className="red"><i className="uk-icon-rub"></i></span></div>
+		                <div className="line_block box_flex">
+		                    <div className="col_left"><span className="blue">Время</span> <span ref="time">{time}</span> <span className="red">дня</span></div>
+		                    <div className="col_center">
+						        <select ref="times" onClick={this.timeClick}>
+				            		{this.state.times.map (this.eachO)}
+				                </select>
+		                    </div>
+		                    <div className="col_right" id="timetext">
+		                        <span className="blue" >Время работы в сутки</span><br/>
+		                        <span ref="h">{this.state.timeN}</span> <span className="red">часа</span>
+		                    </div>
+		                </div>
+		                <div className="line_block box_flex">
+		                    <div className="col_left"><span className="blue">Глубина разработки</span> <span ref="qN">{this.state.qualitys[0].n}</span></div>
+		                    <div className="col_center">
+						        <select ref="qualitys" onClick={this.qualClick}>
+				            		{this.state.qualitys.map (this.eachO)}
+				                </select>
+		                    </div>
+		                    <div className="col_right">
+		                        <span className="blue">В разработку входит</span><br/>
+		                        <span ref="qD">{this.state.qualitys[0].d}</span>
+		                    </div>
+		                </div>
+		            </div>
+                    <div className="line_block">
+                        <span className="blue">Используемые технологии</span> 
+                        <div className="link">HTML5</div>
+                        <div className="link">CSS3</div>
+                        <div className="link">SCSS</div>
+                        <div className="link">Java Script</div>
+                        <div className="link">Uikit</div>
+                        <div className="link">CMS MODX Revo</div>
+                    </div>
+                    <div className="line_block">
+                        <span className="blue">Рекомендации</span> 
+                        <div className="link">Хостинг Jino.ru</div>
+                    </div>
+                </li>
+ 			);
+      	}
+      });
+      var Field = React.createClass({
+      	render: function() {
+      		return (
+            <div className="box_flex">
+                <ul className="col_dop" data-uk-switcher="{connect:'#my-id-one, #my-id-two'}">
+                    <li className="line"><div className="numb">1</div><div className="item">Лендинг</div></li>
+                    <li className="line"><div className="numb">2</div><div className="item">Сайт визитка</div></li>
+                    <li className="line"><div className="numb">3</div><div className="item">Копоративный сайт</div></li>
+                    <li className="line"><div className="numb">4</div><div className="item">Веб сервис</div></li>
+                </ul>
+                <ul id="my-id-one" className="uk-switcher">
+	                <Calc t="15" />
+	                <Calc t="20" />
+	                <Calc t="30" />
+	                <Calc t="60" />
+                </ul>
+                <ul id="my-id-two" className="uk-switcher col_dop">
+                    <li><div className="line_block"><span className="blue">Лендинг</span> - это
+                    веб-страница, построенная определенным образом, основной задачей которой является сбор контактных данных целевой аудитории. Используется для усиления эффективности рекламы, увеличения аудитории. Целевая страница обычно содержит информацию о товаре или услуге.</div></li>
+                    <li>Сайт визитка - это</li>
+                    <li>Копоративный сайт - это</li>
+                    <li>Веб сервис - это</li>
+                </ul>
+            </div>
+      		);
+      	}
+      });
+      const place = document.getElementById('root') /*Определение блока  который нужно вставить содержимое*/
+      ReactDOM.render(<Field />,place); /*Вставка содержимого в блок*/
+    </script>
+</body>
+</html>
