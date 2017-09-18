@@ -78,18 +78,18 @@
 
       	eachO: function (i) { /* Вид вывода списка задач из массива */
           return (<Time value={i.k}>{i.n}</Time>);},
-
-		    timeClick: function() {
+        
+        timeClick: function() {
           var mas = this.state.times;
           var element = this.refs.times.value;
           var k,n;
           mas.map (
           function (i){
             if (element == i.n){k = i.k;n = i.n;}})
-			   this.setState ({timeK: k,timeN: n});},
+          this.setState ({timeK: k,timeN: n});},
 
 
-		    qualClick: function() {
+        qualClick: function() {
           var mas = this.state.qualitys;
           var element = this.refs.qualitys.value;
           var k,n,d;
