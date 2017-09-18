@@ -96,13 +96,13 @@
           mas.map (
             function (i){
               if (element == i.n){k = i.k;n = i.n;d = i.d;}})
-
           this.setState ({qualityK: k});
           this.refs.qN.innerText = n;
-          this.refs.qD.innerText = d;},
+          this.refs.qD.innerText = d;
+        },
 
 
-      	render: function() {
+        render: function() {
       		var Hp = 2000;
       		var p = this.props.t * Hp * this.state.timeK * this.state.qualityK;
       		var time = this.props.t / this.state.timeN;
@@ -148,7 +148,7 @@
                 </div>
               </div>
               <div className="line_block">
-                <span className="blue">Используемые технологии</span> 
+                <span className="blue">Используемые технологии: </span> 
                 <div className="link">HTML5</div>
                 <div className="link">CSS3</div>
                 <div className="link">SCSS</div>
@@ -157,7 +157,7 @@
                 <div className="link">CMS MODX Revo</div>
               </div>
               <div className="line_block">
-                <span className="blue">Рекомендации</span> 
+                <span className="blue">Рекомендации: </span> 
                 <div className="link">Хостинг Jino.ru</div>
               </div>
             </li>
@@ -166,8 +166,8 @@
       });
 
       var Field = React.createClass({
-      	render: function() {
-      		return (
+        render: function() {
+          return (
             <div className="box_flex">
               <ul className="col_dop" data-uk-switcher="{connect:'#my-id-one, #my-id-two'}">
                 <li className="line"><div className="numb">1</div><div className="item">Лендинг</div></li>
@@ -207,7 +207,7 @@
       		);
       	}
       });
-      const place = document.getElementById('root') /*Определение блока  который нужно вставить содержимое*/
+      const place = document.getElementById('root'); /*Определение блока  который нужно вставить содержимое*/
       ReactDOM.render(<Field />,place); /*Вставка содержимого в блок*/
     </script>
 </body>
