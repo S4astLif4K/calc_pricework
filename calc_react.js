@@ -5,6 +5,7 @@ var Item = React.createClass ({
     );
   }
 });
+
 var Description = React.createClass ({
   render: function() {
     return (
@@ -12,7 +13,9 @@ var Description = React.createClass ({
     );
   }
 });
+
 var Time = React.createClass({render: function() {return (<option>{this.props.children}</option>);}});
+
 var Calc = React.createClass ({
   getInitialState: function() {
     return {
@@ -101,6 +104,7 @@ var Calc = React.createClass ({
  		);
   }
 });
+
 var Field = React.createClass({
   getInitialState: function() {
     return {
@@ -131,4 +135,5 @@ var Field = React.createClass({
   	);
   }
 });
+
 ReactDOM.render(<Field />,document.getElementById('root'));
