@@ -27,7 +27,6 @@ var Calc = React.createClass ({
       ],timeN:3,timeK:1,qualityK:1
     }
   },
-  eachO: function (i) {return (<Time value={i.k}>{i.n}</Time>);},
   timeClick: function() {
     var mas = this.state.times;
     var element = this.refs.times.value;
@@ -44,6 +43,7 @@ var Calc = React.createClass ({
     this.refs.qN.innerText = n;
     this.refs.qD.innerText = d;
   },
+  eachO: function (i) {return (<Time value={i.k}>{i.n}</Time>);},
   render: function() {
     var Hp = 2000;
     var p = this.props.t * Hp * this.state.timeK * this.state.qualityK;
@@ -116,9 +116,9 @@ var Field = React.createClass({
       ]
     }
   },
+  eachI: function (i,n) {return (<Item number={n} name={i.n} />);},
   eachC: function (i) {return (<Calc t={i.t} />);},
   eachD: function (i) {return (<Description name={i.n} description={i.d} />);},
-  eachI: function (i,n) {return (<Item number={n} name={i.n} />);},
   render: function() {
     return (
       <div className="box_flex">
