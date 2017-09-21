@@ -135,5 +135,5 @@ var Field = React.createClass({
   	);
   }
 });
-
-ReactDOM.render(<Field />,document.getElementById('root'));
+const place = document.getElementById('root');
+ReactDOM.render(<Field />,place);
