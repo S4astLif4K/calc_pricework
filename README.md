@@ -1,4 +1,4 @@
 # calc_pricework
 ## Tech we use:
-1. UIKIT
-2. ReactJS
+1. UIkit framework
+2. React JS
