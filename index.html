@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="css/components/slideshow.min.css"/>
   <link rel="stylesheet" href="css/components/dotnav.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
   <script src="js/uikit.min.js"></script>
   <script src="js/components/accordion.min.js"></script>
   <script src="js/components/slider.min.js"></script>
@@ -22,25 +23,168 @@
   <script src="js/components/sticky.min.js"></script>
   <script src="js/components/notify.min.js"></script>
   <script src="js/components/parallax.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react-dom.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 </head>
+
 <body>
-  <menu>
-    <ul>
-      <li class="line"><div class="item"><span class="red">#</span> <span class="blue">define</span></div></li>
-      <li class="line"><div class="item">Главная</div></li>
-      <li class="line"><div class="numb"><i class="uk-icon-caret-down"></i></div><div class="item">Навыки</div></li>
-      <li class="line"><div class="numb"><i class="uk-icon-caret-down"></i></div><div class="item">Портфолио</div></li>
-      <li class="line"><div class="numb"><i class="uk-icon-caret-down"></i></div><div class="item">Блог</div></li>
-      <li class="line"><div class="item">Партнёры</div></li>
-    </ul>
-  </menu>
+  <header>
+    <menu>
+      <ul>
+        <li class="line"><div class="item"><span class="red">#</span> <span class="blue">define</span></div></li>
+        <li class="line"><div class="item">Главная</div></li>
+        <li class="line"><div class="numb"><i class="uk-icon-caret-down"></i></div><div class="item">Навыки</div></li>
+        <li class="line"><div class="numb"><i class="uk-icon-caret-down"></i></div><div class="item">Портфолио</div></li>
+        <li class="line"><div class="numb"><i class="uk-icon-caret-down"></i></div><div class="item">Блог</div></li>
+        <li class="line"><div class="item">Партнёры</div></li>
+      </ul>
+    </menu>
+  </header>
   <section>
+    <div class="nav">
+      <div class="content_text" data-uk-sticky="{top:40}">
+        <ul class="onepage-pagination">
+          <li>
+            <i class="uk-icon-caret-down"></i> <i class="uk-icon-folder-open-o"></i> #define
+          </li>
+          <li>
+            <a href="#o-nas" class="active">
+            -- <i class="uk-icon-file-code-o"></i> О нас
+            </a>
+          </li>
+          <li>
+            <a href="#projects" class="">
+            -- <i class="uk-icon-file-code-o"></i> Проекты в разработке
+            </a>
+          </li>
+          <li>
+            <a href="#price" class="">
+            -- <i class="uk-icon-file-code-o"></i> Стоимость разработке
+            </a>
+          </li>
+          <li>
+            <a href="#case" class="">
+            -- <i class="uk-icon-file-code-o"></i> Портфолио
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
     <div class="container">
-      <div class="h1-item">Рассчитайте стоимость разработки</div>
-      <div id="root"></div>
+      <div id="o-nas">
+        <div class="h1-item">О нас</div>
+        <div class="content_text">
+          Мы представляем из себя удалённую команду разработчиков<br>
+          Наши навыки: 
+          <div class="link">CSS3</div>
+          <div class="link">HTML5</div>
+          <div class="link">Java Script</div>
+          <div class="link">React JS</div>
+          <div class="link">Go</div>
+          <div class="link">Python</div>
+          <div class="link">PHP</div>
+          <div class="link">CMS MODX revo</div>
+          <div class="link">Ruby on Rails</div>
+          <br>
+          Услуги разработки:
+          <div class="link">Лендинг</div>
+          <div class="link">Сайт визитка</div>
+          <div class="link">Копоративный сайт</div>
+          <div class="link">Веб сервис</div>
+          <br>
+          Дополнительные услуги:
+          <div class="link">Чистка от вирусов</div>
+          <div class="link">Увеличение производительности сайта</div>
+          <div class="link">Доработка готовых проектов</div>
+        </div>
+      </div>
+      <div id="projects">
+        <div class="h1-item">Проекты в разработке</div>
+          <div class="box_flex-wrap">
+            <div class="project_box">
+              <div class="vert_line"></div>
+              <div class="content_text">
+                Здесь может быть ваш проект
+              </div>
+            </div>
+            <div class="project_box">
+              <div class="vert_line"></div>
+              <div class="content_text">
+                Здесь может быть ваш проект
+              </div>
+            </div>
+            <div class="project_box activ">
+              <div class="content_text">
+                <span class="blue">Сайт:</span> project.ru<br>
+                <span class="blue">Время:</span> 5 <span class="red">дня</span>
+                <span class="blue">Осталось:</span> 2.3 <span class="red">дня</span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div id="price">
+        <div class="h1-item">Рассчитайте стоимость разработки</div>
+        <div id="root"></div>
+      </div>
+      <div id="case">
+        <div class="h1-item">Портфолио</div>
+        <div class="box_flex-wrap projects">
+          <div class="project_box case">
+            <div class="img" style="background-image: url('img/case/makena.jpg');">
+              <div class="img-hover"></div>
+            </div>
+            <div class="content_text">
+              <div class="h1-item"><div class="link">ООО MAKENA</div> <div class="link"><i class="uk-icon-clock-o"></i> 96 ч</div></div>
+              <div class="link">CSS3</div>
+              <div class="link">HTML5</div>
+              <div class="link">CMS MODX Revo</div>
+              <div class="link">JavaScript</div>
+              <div class="link">UIkit framework</div>
+            </div>
+          </div>
+          <div class="project_box case">
+            <div class="img" style="background-image: url('img/case/cpu.jpg');">
+              <div class="img-hover"></div>
+            </div>
+            <div class="content_text">
+              <div class="h1-item"><div class="link">ООО ЦПУ</div> <div class="link"><i class="uk-icon-clock-o"></i> 240 ч</div></div>
+              <div class="link">CSS3</div>
+              <div class="link">HTML5</div>
+              <div class="link">Ruby on Rails</div>
+              <div class="link">JavaScript</div>
+              <div class="link">Bootstrap framework</div>
+            </div>
+          </div>
+          <div class="project_box case">
+            <div class="img" style="background-image: url('img/case/al-s.jpg');">
+              <div class="img-hover"></div>
+            </div>
+            <div class="content_text">
+              <div class="h1-item"><div class="link">ОАО АКБ "Авангард"</div> <div class="link"><i class="uk-icon-clock-o"></i> 110 ч</div></div>
+              <div class="link">CSS3</div>
+              <div class="link">HTML5</div>
+              <div class="link">CMS MODX Revo</div>
+              <div class="link">JavaScript</div>
+              <div class="link">UIkit framework</div>
+            </div>
+          </div>
+          <div class="project_box case">
+            <div class="img" style="background-image: url('img/case/service-m.jpg');">
+              <div class="img-hover"></div>
+            </div>
+            <div class="content_text">
+              <div class="h1-item"><div class="link">ОАО СЕРВИС-М</div> <div class="link"><i class="uk-icon-clock-o"></i> 83 ч</div></div>
+              <div class="link">CSS3</div>
+              <div class="link">HTML5</div>
+              <div class="link">CMS MODX Revo</div>
+              <div class="link">JavaScript</div>
+              <div class="link">UIkit framework</div>
+            </div>
+          </div>
+        </div>
+        <div style="height: 5px;"></div>
+      </div>
     </div>
   </section>
   <script type="text/babel">
@@ -96,7 +240,7 @@
         var time = this.props.t / this.state.timeN;
         time = time.toFixed(0);
         return (
-          <li>
+          <li className="block">
             <div className="line_block">
               <span className="blue">Стоимость: </span>
               <span ref="price">{p}</span>
