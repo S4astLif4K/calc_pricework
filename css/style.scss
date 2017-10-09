@@ -7,7 +7,7 @@
   @font-face {
   font-family: OS;
   src: url(../fonts/OS.ttf); }
-$main-width: 1170px;
+$main-width: 73.9vw;
 @mixin background-image($position,$size) {
 	background-position: $position;
 	background-size: $size;
@@ -44,6 +44,7 @@ section,header,footer,menu{
 .container{
 	display: block;
 	margin: 0 auto;
+	padding-top: 30px;
 	max-width: $main-width;
 	position: relative;
     -moz-box-sizing: border-box;
@@ -55,7 +56,15 @@ section,header,footer,menu{
   clear: both;
 }
 menu{
-	background: rgba(000,000,000,0.1);
+	background: rgba(000,000,000,0.3);
+}
+header{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #161b1e;
+	width: 100%;
+	z-index: 10;
 }
 menu ul{
 	padding: 0px;
@@ -99,6 +108,12 @@ menu ul{
 .green{
 	color: #6f9e1a;
 }
+.box_flex-wrap{
+	display:flex;
+	align-items: flex-start;
+	flex-wrap:wrap;
+	justify-content: flex-start;
+}
 .box_flex{
 	display:flex;
 	align-items: flex-start;
@@ -111,12 +126,13 @@ menu ul{
     box-sizing: border-box;
 }
 .col_dop{
-	width: 29%;
+	width: 28.2%;
 	background: none;
 }
 .line_block{
 	padding: 5px 10px;
-	border-bottom: 1px rgba(255,255,255,0.5) dotted;
+	background: rgba(000,000,000,0.2);
+	margin-bottom: 10px;
 }
 .col_left,.col_right{
 	width: 33%;
@@ -131,7 +147,7 @@ menu ul{
 .link{
 	display: inline-block;
 	vertical-align: top;
-	margin:0 5px;
+	margin:5px 3px;
 	padding: 0 5px;
 	background: rgba(255,255,255,0.1);
 }
@@ -156,12 +172,124 @@ menu ul{
 }
 .h1-item{
 	padding: 5px 10px;
-	color: #6f9e1a;
+	color: #4ed9b2;
+	margin: 10px 0;
 }
 ul.col_dop{
 	padding-left: 0px !important;
 }
 .content_text{
-	padding: 0px 10px;
+	font-size: 15px;
+	padding: 5px 10px;
 	line-height: 25px;
+	-moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.project_box{
+	font-size: 0px;
+	text-align: center;
+	margin-right: 10px;
+	width: 156px;
+	height: 156px;
+	background: rgba(255,255,255,0.1);
+	border:1px rgba(255,255,255,0) dotted;
+}
+.project_box.activ{
+	text-align: left;
+	background: none;
+	border:1px rgba(255,255,255,0.5) dotted;
+}
+.vert_line{
+	width: 0px;
+	height: 100%;
+	display: inline-block;
+	vertical-align: middle;
+}
+.project_box .content_text{
+	display: inline-block;
+	width: 100%;
+	vertical-align: middle;
+}
+.projects .project_box{
+	margin: 5px;
+}
+.box_flex-wrap.projects{
+	margin:-5px;
+}
+.project_box.case{
+	width: 381px;
+	height: auto;
+	text-align: left;
+}
+.project_box.case .content_text{
+	padding: 4px;
+	font-size: 0px;
+}
+.project_box.case .h1-item{
+	color: #4ed9b2;
+	margin: 0px;
+	padding: 0px;
+	display:flex;
+	align-items: flex-start;
+	flex-wrap:nowrap;
+	justify-content: space-between;
+}
+.project_box.case .img{
+	position: relative;
+	height: 215px;
+	@include background-image(center top,cover);
+}
+.project_box.case .img-hover{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: rgba(22,27,30,0.2);
+}
+.project_box.case .link{
+	font-size: 15px;
+	background: rgba(000,000,000,0.4);
+	margin: 4px;
+}
+/*15.83px = 1vw*/
+.nav{
+	background: rgba(000,000,000,0.2); 
+	color: rgba(255,255,255,0.3); 
+	width: 12vw;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	padding-top: 20px;
+	-moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.nav ul{
+	padding: 0px;
+	margin: 0px;
+}
+.nav ul li a{
+	color: rgba(255,255,255,0.3); 
+}
+.nav ul li a.active{
+	color: rgba(255,255,255,0.6); 
+}
+.nav ul li a:hover{
+	text-decoration: none;
+}
+.nav ul li:first-child{
+	margin-left: 0px;
+	border: none;
+}
+.nav ul li{
+	margin-left: 4px;
+	border-left: 1px rgba(255,255,255,0.3) dashed;
+	display: block;
+	white-space: nowrap; /* Отменяем перенос текста */
+    overflow: hidden; /* Обрезаем содержимое */
+    text-overflow: ellipsis; /* Многоточие */
+}
+.block{
+
 }
