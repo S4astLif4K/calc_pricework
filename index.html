@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/components/slidenav.min.css"/>
   <link rel="stylesheet" href="css/components/slideshow.min.css"/>
   <link rel="stylesheet" href="css/components/dotnav.min.css"/>
+  <link rel="stylesheet" href="css/components/form-select.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
   <script src="js/uikit.min.js"></script>
@@ -23,6 +24,7 @@
   <script src="js/components/sticky.min.js"></script>
   <script src="js/components/notify.min.js"></script>
   <script src="js/components/parallax.min.js"></script>
+  <script src="js/components/form-select.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
@@ -253,9 +255,12 @@
                 <span className="red"> дня</span>
               </div>
               <div className="col_center">
+              <div className="uk-form-select" data-uk-form-select>
+                <i className="uk-icon-caret-down"></i><span></span>
                 <select ref="times" onClick={this.timeClick}>
                   {this.state.times.map (this.eachO)}
                 </select>
+              </div>
               </div>
               <div className="col_right" id="timetext">
                 <span className="blue" >Время работы в сутки:</span><br/>
@@ -268,9 +273,12 @@
                 <span ref="qN">{this.state.qualitys[0].n}</span>
               </div>
               <div className="col_center">
-                <select ref="qualitys" onClick={this.qualClick}>
-                  {this.state.qualitys.map (this.eachO)}
-                </select>
+                <div className="uk-form-select" data-uk-form-select>
+                  <i className="uk-icon-caret-down"></i><span></span>
+                  <select ref="qualitys" onClick={this.qualClick}>
+                    {this.state.qualitys.map (this.eachO)}
+                  </select>
+                </div>
               </div>
               <div className="col_right">
                 <span className="blue">В разработку входит:</span><br/>
