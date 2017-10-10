@@ -29,13 +29,12 @@ var ProjectsList = React.createClass ({
   render: function() {
     return (
       <span>
-        <div className="h1-item">Проекты в разработке</div>
         <div className="box_flex-wrap">
-          //here projects are
+          {/*here projects are START*/}
           <UnActiveProject />
           <UnActiveProject />
           <ActiveProject WebsiteName="project.ru" days="5" daysleft="2.3" />
-          //here projects are
+          {/*here projects are END*/}
         </div>
       </span>
     );
