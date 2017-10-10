@@ -16,9 +16,9 @@ var ActiveProject = React.createClass ({
     return (
       <div className="project_box activ">
         <div className="content_text">
-          <span className="blue">Сайт:</span>{this.props.WebsiteName}<br/> 
-          <span className="blue">Время:</span>{this.props.days}<span className="red">дня</span><br/> 
-          <span className="blue">Осталось:</span>{this.props.daysleft}<span className="red">дня</span>
+          <span className="blue">Сайт:</span>&nbsp;{this.props.WebsiteName}<br/> 
+          <span className="blue">Время:</span>&nbsp;{this.props.days}&nbsp;<span className="red">дня</span><br/> 
+          <span className="blue">Осталось:</span>&nbsp;{this.props.daysleft}&nbsp;<span className="red">дня</span>
         </div>
       </div>
     );
@@ -26,4 +26,4 @@ var ActiveProject = React.createClass ({
 });
 
 const place = document.getElementById('projects_list');
-ReactDOM.render(<ActiveProject WebsiteName=" project.ru" days=" 5 " daysleft=" 2.3 " />,place);
+ReactDOM.render(<ActiveProject WebsiteName="project.ru" days="5" daysleft="2.3" />,place);
