@@ -25,5 +25,22 @@ var ActiveProject = React.createClass ({
   }
 });
 
-const place = document.getElementById('projects_list');
-ReactDOM.render(<ActiveProject WebsiteName="project.ru" days="5" daysleft="2.3" />,place);
+var ProjectsList = React.createClass ({
+  render: function() {
+    return (
+      <span>
+        <div className="h1-item">Проекты в разработке</div>
+        <div className="box_flex-wrap">
+          //here projects are
+          <UnActiveProject />
+          <UnActiveProject />
+          <ActiveProject WebsiteName="project.ru" days="5" daysleft="2.3" />
+          //here projects are
+        </div>
+      </span>
+    );
+  }
+})
+
+const place = document.getElementById('projects');
+ReactDOM.render(<ProjectsList />,place);
