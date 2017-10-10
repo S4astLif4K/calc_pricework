@@ -10,3 +10,17 @@ var UnActiveProject = React.createClass ({
     );
   }
 });
+
+var ActiveProject = React.createClass ({
+  render: function() {
+    return (
+      <div className="project_box activ">
+        <div className="content_text">
+          <span className="blue">Сайт:</span>{this.props.WebsiteName}<br/> 
+          <span className="blue">Время:</span>{this.props.days}<span className="red">дня</span><br/> 
+          <span className="blue">Осталось:</span>{this.props.daysleft}<span className="red">дня</span>
+        </div>
+      </div>
+    );
+  }
+});
