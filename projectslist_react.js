@@ -25,5 +25,5 @@ var ActiveProject = React.createClass ({
   }
 });
 
-const place = document.getElementById('project_list');
+const place = document.getElementById('projects_list');
 ReactDOM.render(<ActiveProject WebsiteName=" project.ru" days=" 5 " daysleft=" 2.3 " />,place);
