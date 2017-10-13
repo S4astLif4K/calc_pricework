@@ -1,12 +1,13 @@
 var UnActiveProject = React.createClass ({
   render: function() {
     return (
-      <div className="project_box">
+      <a className="project_box" href="#call-modal" data-uk-modal>
         <div className="vert_line"></div>
         <div className="content_text">
-          Здесь может быть ваш проект
+          <div className="default">Здесь может быть ваш проект</div>
+          <div className="hover"><span className="blue">Кликните</span>чтобы заказать проект</div>
         </div>
-      </div>
+      </a>
     );
   }
 });
@@ -29,6 +30,7 @@ var ProjectsList = React.createClass ({
   render: function() {
     return (
       <span>
+        <div className="h1-item"><i className="uk-icon-cubes"></i> Проекты в разработке</div>
         <div className="box_flex-wrap">
           {/*here projects are START*/}
           <UnActiveProject />
