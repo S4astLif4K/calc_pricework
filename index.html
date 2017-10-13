@@ -31,15 +31,53 @@
 </head>
 
 <body>
+  <div id="call-modal" class="uk-modal">
+      <div class="uk-modal-dialog">
+        <div class="uk-modal-header">
+          <div class="h1-item">Заказать разработку проекта</div>
+        </div>
+        <div class="line_block box_flex">
+          <li class="line black"><a><div class="numb"><i class="uk-icon-user"></i></div><div class="item">Ваше имя:</div></a></li>
+          <input class="black" type="" name="" placeholder="Введите имя">
+        </div>
+        <div class="line_block box_flex">
+          <li class="line black"><a><div class="numb"><i class="uk-icon-envelope"></i></div><div class="item">Ваша почта:</div></a></li>
+          <input class="black" type="" name="" placeholder="Введите почту">
+        </div>
+        <div class="line_block box_flex">
+          <li class="line black"><a><div class="numb"><i class="uk-icon-phone"></i></div><div class="item">Ваш телефон:</div></a></li>
+          <input class="black" type="" name="" placeholder="Введите телефон">
+        </div>
+        <div class="line_block box_flex">
+          <li class="line black"><a><div class="numb"><i class="uk-icon-pencil"></i></div><div class="item">Ваш комментарий:</div></a></li>
+          <input class="black" type="" name="" placeholder="Введите комментарий">
+        </div>
+        <div class="line_block box_flex">
+          <li class="line black"><a><div class="numb"><i class="uk-icon-edit"></i></div><div class="item">ТЗ либо краткое описание проекта:</div></a></li>
+          <input class="black file" type="file">
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button type="button" class="uk-modal-close uk-button send close">Отмена</button>
+            <button type="button" class="uk-button send"><i class="uk-icon-send"></i> Отправить</button>
+        </div>
+      </div>
+  </div>
   <header>
     <menu>
       <ul>
         <li class="line"><div class="item"><span class="red">#</span> <span class="blue">define</span></div></li>
-        <li class="line"><div class="item">Главная</div></li>
-        <li class="line"><div class="numb"><i class="uk-icon-caret-down"></i></div><div class="item">Навыки</div></li>
-        <li class="line"><div class="numb"><i class="uk-icon-caret-down"></i></div><div class="item">Портфолио</div></li>
-        <li class="line"><div class="numb"><i class="uk-icon-caret-down"></i></div><div class="item">Блог</div></li>
-        <li class="line"><div class="item">Партнёры</div></li>
+        <li class="line active"><a><div class="item">Главная</div></a></li>
+        <li class="line"><a><div class="item">Портфолио</div></a></li>
+        <li class="line"><a><div class="item">Цены</div></a></li>
+        <li class="uk-button-dropdown line" data-uk-dropdown="" aria-haspopup="true" aria-expanded="false"><a><div class="numb"><i class="uk-icon-caret-down"></i></div><div class="item">Блог</div></a>
+          <div class="uk-dropdown uk-dropdown-bottom">
+            <ul class="uk-nav uk-nav-dropdown">
+                <li><a href="#">Подход к работе</a></li>
+                <li><a href="#">Преимущества</a></li>
+                <li><a href="#">Этапы разработки</a></li>
+            </ul>
+          </div>
+        </li>
       </ul>
     </menu>
   </header>
@@ -72,13 +110,17 @@
           </li>
         </ul>
       </div>
+      <div class="contacts_fix">
+        <li class="line"><a><div class="numb"><i class="uk-icon-phone"></i></div><div class="item">+7 999 219 77 18</div></a></li>
+        <button type="button" class="uk-button send close"  data-uk-modal="{target:'#call-modal'}"><i class="uk-icon-send"></i> Заказать проект</button>
+      </div>
     </div>
     <div class="container">
       <div id="o-nas">
-        <div class="h1-item">О нас</div>
-        <div class="content_text">
+        <div class="h1-item"><i class="uk-icon-users"></i> О нас</div>
+         <div class="content_text">
           Мы представляем из себя удалённую команду разработчиков<br>
-          Наши навыки: 
+          <span class="black-color">Наши навыки: </span>
           <div class="link">CSS3</div>
           <div class="link">HTML5</div>
           <div class="link">Java Script</div>
@@ -89,26 +131,58 @@
           <div class="link">CMS MODX revo</div>
           <div class="link">Ruby on Rails</div>
           <br>
-          Услуги разработки:
-          <div class="link">Лендинг</div>
-          <div class="link">Сайт визитка</div>
-          <div class="link">Копоративный сайт</div>
-          <div class="link">Веб сервис</div>
+          <span class="black-color">Наши преимущества:</span>
+          <div class="link">Макеты сразу в формате html</div>
+          <div class="link">Всегда чистый код</div>
+          <div class="link">Рацианальное время разработки</div>
+          <div class="link">Чистая структура сайта</div>
+          <div class="link">Адаптивность под различные устройства</div>
+          <div class="link">Высокая скорость работы проектов</div>
           <br>
-          Дополнительные услуги:
-          <div class="link">Чистка от вирусов</div>
-          <div class="link">Увеличение производительности сайта</div>
-          <div class="link">Доработка готовых проектов</div>
+          <span class="black-color">Услуги разработки:</span>
+          <br>
+          <li class="line black black-hover"><a><div class="numb"><i class="uk-icon-code"></i></div><div class="item">Лендинг</div></a></li>
+          <br>
+          <li class="line black black-hover"><a><div class="numb"><i class="uk-icon-code"></i></div><div class="item">Сайт визитка</div></a></li>
+          <br>
+          <li class="line black black-hover"><a><div class="numb"><i class="uk-icon-code"></i></div><div class="item">Копоративный сайт</div></a></li>
+          <br>
+          <li class="line black black-hover"><a><div class="numb"><i class="uk-icon-code"></i></div><div class="item">Веб сервис</div></a></li>
+          <br>
+          <span class="black-color">Дополнительные услуги:</span>
+          <br>
+          <li class="line black black-hover"><a><div class="numb"><i class="uk-icon-bug"></i></div><div class="item">Чистка от вирусов</div></a></li>
+          <br>
+          <li class="line black black-hover"><a><div class="numb"><i class="uk-icon-tachometer"></i></div><div class="item">Увеличение производительности сайта</div></a></li>
+          <br>
+          <li class="line black black-hover"><a><div class="numb"><i class="uk-icon-cube"></i></div><div class="item">Доработка готовых проектов</div></a></li>
         </div>
       </div>
-      <div class="h1-item">Проекты в разработке</div>
-      <div id="projects"></div>
+      <div id="projects">
+          <div class="h1-item"><i class="uk-icon-cubes"></i> Проекты в разработке</div>
+          <div class="box_flex-wrap">
+            <a class="project_box" href="#call-modal" data-uk-modal>
+              <div class="vert_line"></div>
+              <div class="content_text">
+                <div class="default">Здесь может быть ваш проект</div>
+                <div class="hover"><span class="blue">Кликните</span> чтобы заказать проект</div>
+              </div>
+            </a>
+            <a class="project_box activ">
+              <div class="content_text">
+                <span class="blue">Сайт:</span> project.ru<br>
+                <span class="blue">Время:</span> 5 <span class="red">дня</span>
+                <span class="blue">Осталось:</span> 2.3 <span class="red">дня</span>
+              </div>
+            </a>
+          </div>
+      </div>
       <div id="price">
-        <div class="h1-item">Рассчитайте стоимость разработки</div>
+        <div class="h1-item"><i class="uk-icon-money"></i> Рассчитайте стоимость разработки</div>
         <div id="root"></div>
       </div>
       <div id="case">
-        <div class="h1-item">Портфолио</div>
+        <div class="h1-item"><i class="uk-icon-briefcase"></i> Портфолио</div>
         <div class="box_flex-wrap projects">
           <div class="project_box case">
             <div class="img" style="background-image: url('img/case/makena.jpg');">
