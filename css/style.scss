@@ -77,6 +77,15 @@ menu ul{
 .line.uk-active .numb{
 	background: rgba(255,255,255,0.1);
 }
+.line a{
+	color: inherit;
+}
+.line:hover a{
+	color: inherit;
+}
+.line.active{
+	background: rgba(255,255,255,0.05);
+}
 .line{
 	display: block;
 	padding: 0px;
@@ -94,7 +103,7 @@ menu ul{
 	vertical-align: middle;
 }
 .item{
-	padding: 5px 20px 5px 10px;
+	padding: 5px 10px 4px 10px;
 }
 .numb{
 	background: rgba(255,255,255,0.1);
@@ -175,6 +184,9 @@ menu ul{
 	color: #4ed9b2;
 	margin: 10px 0;
 }
+.h1-item i{
+	margin-right: 5px;
+}
 ul.col_dop{
 	padding-left: 0px !important;
 }
@@ -190,14 +202,32 @@ ul.col_dop{
 	text-align: center;
 	margin-right: 10px;
 	width: 156px;
+	color: #fff;
 	height: 156px;
 	background: rgba(255,255,255,0.1);
 	border:1px rgba(255,255,255,0) dotted;
+}
+.project_box:hover{
+	color: inherit;
+}
+.hover{
+	display: none;
+}
+#projects .project_box:hover{
+	background: none;
+	border:1px rgba(255,255,255,0.5) dotted;
+}
+.project_box:hover .default{
+	display: none;
+}
+.project_box:hover .hover{
+	display: block;
 }
 .project_box.activ{
 	text-align: left;
 	background: none;
 	border:1px rgba(255,255,255,0.5) dotted;
+	cursor: default;
 }
 .vert_line{
 	width: 0px;
@@ -258,10 +288,10 @@ ul.col_dop{
 	color: rgba(255,255,255,0.3); 
 	width: 12vw;
 	height: 100%;
-	position: absolute;
+	position: fixed;
 	top: 0px;
 	left: 0px;
-	padding-top: 20px;
+	padding-top: 30px;
 	-moz-box-sizing: border-box;
     box-sizing: border-box;
 }
@@ -305,4 +335,150 @@ ul.col_dop{
 select{
 	color: #fff !important;
 	background: rgba(255,255,255,0.1) !important;
+}
+.contacts_fix{
+	position: absolute;
+	padding: 10px;
+	width: 100%;
+	font-size: 15px;
+	-moz-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 0px;
+    bottom: 0px;
+}
+.contacts_fix button{
+	width: 100%;
+	margin-top: 10px;
+}
+.uk-button:focus{
+	background: none !important;
+	color: #fff !important;
+}
+.uk-button.send{
+	background: #4ed9b2;
+	color: #161b1e;
+}
+.uk-button.send:hover{
+	background:  rgba(000,000,000,0.3);
+	color: #4ed9b2;
+}
+.uk-button.send.close{
+	background: none;
+	color: #4ed9b2;
+}
+.uk-modal-footer,
+.uk-modal-header{
+	background: #161b1e;
+	padding: 10px;
+}
+.uk-modal-footer{
+	margin-top: 6px !important;
+}
+.uk-modal-header{
+	margin-bottom: 6px !important;
+}
+.uk-modal-header .h1-item{
+	margin-top: 0px;
+}
+.uk-modal-dialog{
+	padding: 0px !important;
+}
+.uk-modal-dialog .line_block.box_flex{
+	background: none;
+	color: #161b1e;
+	margin-bottom: 0px;
+	display:flex;
+	flex-wrap:nowrap;
+}
+.line.black.black-hover{
+	margin: 5px 0;
+}
+.line.black.black-hover:hover .numb{
+	background: rgba(255,255,255,0.1);
+}
+.line.black.black-hover .numb{
+	background: rgba(255,255,255,0.1);
+}
+.line.black.black-hover:hover{
+	background: rgba(000,000,000,0.2);
+}
+.line.black.black-hover{
+	display: inline-block;
+	background: rgba(255,255,255,0.05);
+}
+.line.black{
+	background: rgba(22,27,30,0.7);
+}
+.line.black:hover{
+	background: rgba(22,27,30,1);
+}
+.line.black a{
+	display:flex;
+	flex-wrap:nowrap;
+}
+.line.black a:hover{
+	text-decoration: none;
+}
+.line.black .item{
+	white-space: nowrap;
+}
+.line.black .numb{
+	background: rgba(22,27,30,1);
+	color: #4ed9b2;
+	width: 20px;
+	text-align: center;
+}
+.uk-modal-dialog .uk-form-select i{
+	color: #fff;
+	background: #161b1e;
+	padding: 7px 10px 8px 10px;
+}
+.uk-modal-dialog .uk-form-select span{
+	color: #fff;
+	background: #161b1e;
+	width: 192px;
+	padding: 5px 10px;
+}
+.uk-modal-dialog select{
+	background: #161b1e !important;
+}
+input,textarea{
+	font-family: OS;
+	border:1px rgba(22,27,30,0.4) solid;
+	outline: none;
+	resize: none;
+	padding: 3px 10px;
+	font-size: 15px;
+}
+input.black,textarea.black{
+	background: none;
+	color: rgba(22,27,30,1);
+	width: 100%;
+	margin-left: 10px;
+}
+input.black.file{
+	padding: 1px 10px;
+}
+.black-color{
+	color: rgba(255,255,255,0.5);
+}
+.uk-dropdown, .uk-dropdown-blank{
+	width: auto !important;
+}
+.uk-dropdown{
+	padding: 0px !important;
+	background: rgb(22,27,30) !important;
+}
+.uk-nav.uk-nav-dropdown{
+	background: rgb(22,27,30) !important;
+	display: block !important;
+}
+.uk-dropdown li{
+	background: rgba(000,000,000,0.3) !important;
+}
+.uk-dropdown li a{
+	white-space: nowrap;
+}
+.uk-dropdown li a:hover{
+	background: rgba(000,000,000,0.4) !important;
 }
