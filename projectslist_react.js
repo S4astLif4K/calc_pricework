@@ -4,8 +4,8 @@ var UnActiveProject = React.createClass ({
       <a className="project_box" href="#call-modal" data-uk-modal>
         <div className="vert_line"></div>
         <div className="content_text">
-          <div className="default">Здесь может быть ваш проект</div>
-          <div className="hover"><span className="blue">Кликните</span>чтобы заказать проект</div>
+          <div className="default">Здесь может быть ваш проект.</div>
+          <div className="hover"><span className="blue">Кликните</span>,чтобы заказать проект.</div>
         </div>
       </a>
     );
