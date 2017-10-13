@@ -15,13 +15,13 @@ var UnActiveProject = React.createClass ({
 var ActiveProject = React.createClass ({
   render: function() {
     return (
-      <div className="project_box activ">
+      <a className="project_box activ">
         <div className="content_text">
           <span className="blue">Сайт:</span>&nbsp;{this.props.WebsiteName}<br/> 
           <span className="blue">Время:</span>&nbsp;{this.props.days}&nbsp;<span className="red">дня</span><br/> 
           <span className="blue">Осталось:</span>&nbsp;{this.props.daysleft}&nbsp;<span className="red">дня</span>
         </div>
-      </div>
+      </a>
     );
   }
 });
